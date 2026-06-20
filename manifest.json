@@ -1,12 +1,16 @@
 {
-  "short_name": "HACKING SARVER",
+  "short_name": "Server hacking",
   "name": "ROMANY Server Hacking Dashboard",
   "icons": [
     {
       "src": "icon.png",
       "type": "image/png",
-      "sizes": "512x512",
-      "purpose": "any maskable"
+      "sizes": "192x192"
+    },
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": "index.html",
