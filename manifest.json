@@ -1,0 +1,17 @@
+{
+  "short_name": "HACKING SARVER",
+  "name": "ROMANY Server Hacking Dashboard",
+  "icons": [
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "index.html",
+  "background_color": "#020105",
+  "theme_color": "#00f2fe",
+  "display": "standalone",
+  "orientation": "portrait-primary"
+}
