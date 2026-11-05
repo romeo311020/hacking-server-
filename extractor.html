@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>محلّل الروابط — ROMANY</title>
+    <meta name="theme-color" content="#00f2fe">
+    <meta name="description" content="تحليل الروابط واستخراج الـ Embed ومسارات الوسائط">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body data-page="extractor">
+    <main>
+        <a class="back-nav" href="index.html"><i class="fa-solid fa-arrow-right"></i> العودة للرئيسية</a>
+
+        <div class="cyber-panel-card">
+            <div style="text-align:center; margin-bottom:26px;">
+                <i class="fa-solid fa-user-ninja" style="font-size:3.2rem;color:var(--accent);margin-bottom:14px;filter:drop-shadow(0 0 15px var(--glow-purple));"></i>
+                <h2 style="font-weight:900;">محلّل واستخراج روابط البث</h2>
+                <p style="color:var(--text-muted);font-size:.9rem;margin-top:6px;">ادخل رابط الصفحة أو الفيديو: هنحدد نوعه، نحوّله لـ Embed لو يوتيوب، ونحاول نلاقي روابط الوسائط المكشوفة في الصفحة</p>
+            </div>
+
+            <div class="cyber-form-container">
+                <div class="cyber-input-group">
+                    <i class="fa-solid fa-link"></i>
+                    <input type="text" id="raw-url-input" inputmode="url" autocomplete="off" spellcheck="false" placeholder="https://...">
+                    <button class="paste-btn" id="paste-btn" title="لصق من الحافظة" aria-label="لصق"><i class="fa-solid fa-paste"></i></button>
+                </div>
+                <label class="setting-row" style="padding:0;border:none;">
+                    <span><b>فحص محتوى الصفحة</b><small>محاولة قراءة الصفحة والبحث عن روابط m3u8 / mp4 (بتشتغل بس لو الموقع بيسمح)</small></span>
+                    <span class="switch"><input type="checkbox" id="scan-toggle" checked><span class="slider"></span></span>
+                </label>
+                <button class="fire-btn" id="run-btn"><span>تحليل الرابط</span><i class="fa-solid fa-magnifying-glass-chart"></i></button>
+            </div>
+
+            <div class="hacker-console" id="extractor-console"></div>
+            <div class="progress-line-container" id="extractor-line-loader"><div class="progress-line-fill" id="extractor-line-fill"></div></div>
+
+            <div class="output-panel" id="extractor-output-panel">
+                <div class="output-title" id="out-title"><i class="fa-solid fa-check-double"></i> <span>تم التحليل</span></div>
+                <div class="output-card">
+                    <div class="output-url" id="final-extracted-url"></div>
+                    <div class="card-actions">
+                        <button class="action-node-btn play" id="btn-test"><i class="fa-solid fa-play"></i> اختبار</button>
+                        <button class="action-node-btn copy" id="btn-copy"><i class="fa-solid fa-copy"></i> نسخ</button>
+                        <button class="action-node-btn open" id="btn-open"><i class="fa-solid fa-arrow-up-right-from-square"></i> فتح</button>
+                    </div>
+                </div>
+                <table class="info-table" id="info-table"></table>
+                <div id="found-box" style="display:none;margin-top:24px;">
+                    <div class="output-title"><i class="fa-solid fa-film"></i> <span>روابط وسائط لقيناها داخل الصفحة</span></div>
+                    <ul class="found-list" id="found-list"></ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="js/tools.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/analyzer.js"></script>
+    <script src="js/pages/extractor.js"></script>
+</body>
+</html>
